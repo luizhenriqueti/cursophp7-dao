@@ -3,7 +3,10 @@
 require_once("config.php");
 
 $usuario = new Usuario();
-$usuario->login("jose", "qwer1234");
 
+$usuario->loadById(7);
+$usuario->update("professor", "!@#!$!$");
 echo $usuario;
+
+
 ?>
