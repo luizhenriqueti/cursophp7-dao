@@ -21,3 +21,16 @@ require_once("config.php");
 //$usuario = new Usuario();
 //$usuario->login("Root","123456"); 
 //echo $usuario;
+
+//insert de novo usuario
+//$aluno = new Usuario();
+//$aluno->setDeslogin("aluno2");
+//$aluno->setDessenha("@lun0");
+//$aluno->insert();
+//echo $aluno;
+
+//
+$usuario = new Usuario();
+$usuario->loadById(8);
+$usuario->update("professor","!@#$%¨&*");
+echo $usuario;
