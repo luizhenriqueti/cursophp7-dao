@@ -10,6 +10,8 @@ class Sql extends PDO {
 
 	}
 
+
+	//recebe todos os parametros
 	private function setParams($statment, $parameters = array()){
 		
 		foreach ($parameters as $key => $value) {
@@ -18,12 +20,18 @@ class Sql extends PDO {
 
 	}
 
+	//faz o bind do parametro recebido
 	private function setParam($statment,$key, $value){
 
 		$statment->bindParam($key, $value);
 
 	}
 
+	/**
+	instancia a propria classe, faz um prepare da rawQuery e passa os 
+	parametros para a função responsavel por fazer o bind dos parametros,
+	executa o statment e retorna a variavel do statment
+	*/
 	public function minhaQuery($rawQuery, $params = array()){
 		
 		$stmt = $this->conn->prepare($rawQuery);
